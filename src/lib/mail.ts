@@ -5,7 +5,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 //TODO: Change to your email address
-const from = 'ChatQPT <onboarding@resend.dev>';
+const from = 'Lucia Auth Template <onboarding@resend.dev>';
 
 export const sendVerificationEmail = async (email: string, token: string) => {
   try {
