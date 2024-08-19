@@ -32,14 +32,13 @@ const VerifyEmail = ({ token }: Props) => {
 
   const onSubmit = useCallback(async () => {
     setFormMessage({ message: '', type: 'error' });
-    if (formMessage.message) return;
     const res = await verifyEmailAction(token);
     if (res.error) {
       setFormMessage({ message: res.error, type: 'error' });
     } else if (res.success) {
       setFormMessage({ message: res.success, type: 'success' });
     }
-  }, [token, formMessage.message]);
+  }, [token]);
 
   useEffect(() => {
     if (!initialized.current) {
